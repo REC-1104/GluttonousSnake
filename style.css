@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #e3f2fd;
+}
+
+.box{
+    width: 65vmin;
+    height: 70vmin;
+    background: #293447;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.details{
+    color: #b8c6dc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding : 20px 25px;
+    display: flex;
+    justify-content: space-between ;
+}
+
+.game{
+    width: 100%;
+    height: 100%;
+    background: #212837;
+    display: grid;
+    grid-template : repeat( 30 ,  1fr) / repeat(30 , 1fr);
+    background: #212837;
+}
+
+.game .food{
+    background: #ff003d;
+}
+
+.game .snake{
+    background: #60cbff;
+}
+
+.shake {
+    animation: shake 0.5s linear 1;
+}
+
+#lost {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.141);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  #scoreContainer {
+    width: 300px;
+    height: 200px;
+    background: white;
+    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.145);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  button {
+    margin: 32px;
+    padding: 10px 30px;
+    cursor: pointer;
+    color: white;
+    background: darkgreen;
+    border: none;
+    outline: none;
+}
+
+.control{
+    display: none;
+    justify-content: space-between;
+}
+
+.control i{
+    padding :25px 0;
+    color : #b8c6dc;
+    width : calc(100%/4);
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-right: 1px solid #171b26;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+  
+      transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .box{
+        width: 90vmin;
+        height: 115vmin;
+    }
+    .details{
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+    .control{
+        display: flex;
+    }
+    .control i{
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
