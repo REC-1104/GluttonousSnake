@@ -55,8 +55,8 @@ const changeDirection = (e) => {
       } 
 }
 
-controls.forEach(e => {
-    e.addEventListener("click",()=>changeDirection({e : e.dataset.key}))
+controls.forEach(key => {
+    key.addEventListener("click",()=>(changeDirection({key : key.dataset.key})));
 })
 
 const initGame = () => {
